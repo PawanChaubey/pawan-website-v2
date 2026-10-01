@@ -1,28 +1,371 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  <title>
-    Publications | Dr. Pawan Kumar Chaubey
-  </title>
+  <title>Publications | Dr. Pawan Kumar Chaubey</title>
 
   <meta
     name="description"
     content="Publications of Dr. Pawan Kumar Chaubey on climate extremes, hydroclimate, climate variability and climate modelling."
   >
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
+  <!-- Main website CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- =====================================================
+       PUBLICATION PAGE ONLY
+       These styles do NOT affect other pages.
+       ===================================================== -->
+
+  <style>
+
+    /* -----------------------------------------------------
+       PUBLICATION MAIN CONTAINER
+       ----------------------------------------------------- */
+
+    .publication-page {
+      width: min(1180px, calc(100% - 84px));
+      margin: 0 auto;
+      padding: 100px 0 120px;
+    }
+
+
+    /* -----------------------------------------------------
+       PAGE INTRO
+       ----------------------------------------------------- */
+
+    .publication-intro {
+      max-width: 900px;
+      padding-bottom: 65px;
+      border-bottom: 1px solid #dedbd4;
+    }
+
+    .publication-kicker {
+      margin-bottom: 18px;
+
+      color: #315f9d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+    .publication-intro h1 {
+      margin: 0 0 25px;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(58px, 7vw, 92px);
+
+      font-weight: 400;
+      line-height: 0.95;
+
+      letter-spacing: -0.045em;
+    }
+
+    .publication-description {
+      max-width: 760px;
+
+      margin: 0;
+
+      color: #66635e;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+
+      line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       SCHOLAR / ORCID / RESEARCHGATE
+       ----------------------------------------------------- */
+
+    .publication-profiles {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 32px;
+    }
+
+    .publication-profiles a {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 10px 17px;
+
+      border: 1px solid #dedbd4;
+      border-radius: 999px;
+
+      color: #171717;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+
+      transition: all 0.25s ease;
+    }
+
+    .publication-profiles a:hover {
+      background: #171717;
+      color: #ffffff;
+      border-color: #171717;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* -----------------------------------------------------
+       YEAR
+       ----------------------------------------------------- */
+
+    .publication-year {
+      padding-top: 55px;
+    }
+
+    .publication-year-title {
+      margin: 0;
+
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid #dedbd4;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+
+      font-weight: 400;
+      line-height: 1;
+    }
+
+
+    /* -----------------------------------------------------
+       PUBLICATION ENTRY
+       ----------------------------------------------------- */
+
+    .publication-item {
+      display: grid;
+
+      grid-template-columns: 55px 1fr;
+
+      gap: 25px;
+
+      padding: 36px 0 45px;
+
+      border-bottom: 1px solid #dedbd4;
+    }
+
+    .publication-number {
+      padding-top: 6px;
+
+      color: #315f9d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.13em;
+    }
+
+    .publication-title {
+      max-width: 850px;
+
+      margin: 0 0 15px;
+
+      color: #171717;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(23px, 2.7vw, 32px);
+
+      font-weight: 400;
+      line-height: 1.25;
+
+      letter-spacing: -0.02em;
+    }
+
+    .publication-authors {
+      max-width: 850px;
+
+      margin: 0 0 8px;
+
+      color: #55524d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    .publication-authors strong {
+      color: #171717;
+      font-weight: 700;
+    }
+
+    .publication-journal {
+      margin: 0;
+
+      color: #77736c;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       DOI BUTTON
+       ----------------------------------------------------- */
+
+    .publication-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+    .publication-links a {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 8px 13px;
+
+      border: 1px solid #dedbd4;
+      border-radius: 3px;
+
+      color: #171717;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+
+      transition: all 0.2s ease;
+    }
+
+    .publication-links a:hover {
+      background: #171717;
+      color: #ffffff;
+      border-color: #171717;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTTOM NOTE
+       ----------------------------------------------------- */
+
+    .publication-note {
+      margin-top: 65px;
+
+      padding: 45px;
+
+      background: #f0efeb;
+
+      border: 1px solid #dedbd4;
+    }
+
+    .publication-note-label {
+      margin-bottom: 12px;
+
+      color: #315f9d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .publication-note h2 {
+      margin: 0 0 12px;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .publication-note p {
+      max-width: 720px;
+
+      margin: 0;
+
+      color: #66635e;
+
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE
+       ----------------------------------------------------- */
+
+    @media (max-width: 700px) {
+
+      .publication-page {
+        width: calc(100% - 36px);
+        padding: 70px 0 80px;
+      }
+
+      .publication-intro {
+        padding-bottom: 50px;
+      }
+
+      .publication-intro h1 {
+        font-size: 58px;
+      }
+
+      .publication-description {
+        font-size: 15px;
+      }
+
+      .publication-item {
+        grid-template-columns: 32px 1fr;
+        gap: 10px;
+
+        padding: 28px 0 35px;
+      }
+
+      .publication-title {
+        font-size: 22px;
+      }
+
+      .publication-authors,
+      .publication-journal {
+        font-size: 13px;
+      }
+
+      .publication-note {
+        padding: 30px 24px;
+      }
+
+      .publication-note h2 {
+        font-size: 28px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -31,31 +374,19 @@
 
 
 <!-- =====================================================
-     HEADER
+     SAME HEADER AS THE OTHER WEBSITE PAGES
      ===================================================== -->
 
 <header class="site-header">
 
-  <a
-    class="brand"
-    href="index.html"
-  >
+  <a class="brand" href="index.html">
     PAWAN KUMAR CHAUBEY
   </a>
 
 
-  <button
-    class="menu-toggle"
-    type="button"
-    aria-label="Open menu"
-  >
-    ☰
-  </button>
-
-
   <nav class="site-nav">
 
-    <a href="index.html">
+    <a href="about.html">
       ABOUT
     </a>
 
@@ -67,10 +398,7 @@
       BIO
     </a>
 
-    <a
-      class="active"
-      href="publications.html"
-    >
+    <a class="active" href="publications.html">
       PUBLICATION
     </a>
 
@@ -89,25 +417,25 @@
 
 
 <!-- =====================================================
-     MAIN
+     PUBLICATIONS
      ===================================================== -->
 
-<main class="page-width inner-page">
+<main class="publication-page">
 
 
-  <!-- ================= PAGE HEADING ================= -->
+  <!-- INTRO -->
 
-  <section class="page-heading">
+  <section class="publication-intro">
 
-    <p class="section-kicker">
+    <div class="publication-kicker">
       RESEARCH OUTPUT
-    </p>
+    </div>
 
     <h1>
       Publications
     </h1>
 
-    <p class="page-subtitle">
+    <p class="publication-description">
 
       Peer-reviewed research on hydroclimatic extremes,
       extreme rainfall, drought, climate variability,
@@ -116,27 +444,22 @@
 
     </p>
 
-  </section>
 
+    <div class="publication-profiles">
 
+      <a href="#" target="_blank" rel="noopener">
+        Google Scholar ↗
+      </a>
 
-  <!-- =================================================
-       PROFILE LINKS
-       ================================================= -->
+      <a href="#" target="_blank" rel="noopener">
+        ORCID ↗
+      </a>
 
-  <section class="pub-profile-links">
+      <a href="#" target="_blank" rel="noopener">
+        ResearchGate ↗
+      </a>
 
-    <a href="#" target="_blank" rel="noopener">
-      Google Scholar ↗
-    </a>
-
-    <a href="#" target="_blank" rel="noopener">
-      ORCID ↗
-    </a>
-
-    <a href="#" target="_blank" rel="noopener">
-      ResearchGate ↗
-    </a>
+    </div>
 
   </section>
 
@@ -148,26 +471,26 @@
 
   <section class="publication-year">
 
-    <div class="publication-year-heading">
+    <h2 class="publication-year-title">
       2026
-    </div>
+    </h2>
 
 
-    <article class="publication-entry">
+    <article class="publication-item">
 
       <div class="publication-number">
         01
       </div>
 
 
-      <div class="publication-text">
+      <div>
 
-        <h2>
+        <h3 class="publication-title">
 
           Projected shifts in dry–wet extremes and possible
           associated drivers over the Hindu Kush Himalaya
 
-        </h2>
+        </h3>
 
 
         <p class="publication-authors">
@@ -192,14 +515,17 @@
         </p>
 
 
-        <a
-          class="publication-doi"
-          href="https://doi.org/10.1080/19475705.2026.2692760"
-          target="_blank"
-          rel="noopener"
-        >
-          DOI ↗
-        </a>
+        <div class="publication-links">
+
+          <a
+            href="https://doi.org/10.1080/19475705.2026.2692760"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
 
       </div>
 
@@ -215,26 +541,26 @@
 
   <section class="publication-year">
 
-    <div class="publication-year-heading">
+    <h2 class="publication-year-title">
       2023
-    </div>
+    </h2>
 
 
-    <article class="publication-entry">
+    <article class="publication-item">
 
       <div class="publication-number">
         02
       </div>
 
 
-      <div class="publication-text">
+      <div>
 
-        <h2>
+        <h3 class="publication-title">
 
           Intensification of Extreme Rainfall in Indian River
           Basin: Using Bias Corrected CMIP6 Climate Data
 
-        </h2>
+        </h3>
 
 
         <p class="publication-authors">
@@ -255,14 +581,17 @@
         </p>
 
 
-        <a
-          class="publication-doi"
-          href="https://doi.org/10.1029/2023EF003556"
-          target="_blank"
-          rel="noopener"
-        >
-          DOI ↗
-        </a>
+        <div class="publication-links">
+
+          <a
+            href="https://doi.org/10.1029/2023EF003556"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
 
       </div>
 
@@ -278,26 +607,26 @@
 
   <section class="publication-year">
 
-    <div class="publication-year-heading">
+    <h2 class="publication-year-title">
       2022
-    </div>
+    </h2>
 
 
-    <article class="publication-entry">
+    <article class="publication-item">
 
       <div class="publication-number">
         03
       </div>
 
 
-      <div class="publication-text">
+      <div>
 
-        <h2>
+        <h3 class="publication-title">
 
           Spatio-Temporal Changes in Extreme Rainfall Events
           Over Different Indian River Basins
 
-        </h2>
+        </h3>
 
 
         <p class="publication-authors">
@@ -320,14 +649,17 @@
         </p>
 
 
-        <a
-          class="publication-doi"
-          href="https://doi.org/10.1029/2021EA001930"
-          target="_blank"
-          rel="noopener"
-        >
-          DOI ↗
-        </a>
+        <div class="publication-links">
+
+          <a
+            href="https://doi.org/10.1029/2021EA001930"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
 
       </div>
 
@@ -343,9 +675,9 @@
 
   <section class="publication-note">
 
-    <p class="section-kicker">
+    <div class="publication-note-label">
       COMPLETE RECORD
-    </p>
+    </div>
 
     <h2>
       Publications and research outputs
@@ -354,8 +686,8 @@
     <p>
 
       The complete publication record, citation information
-      and research outputs are available through my
-      scholarly profiles.
+      and research outputs are available through my scholarly
+      profiles.
 
     </p>
 
@@ -382,8 +714,6 @@
 
 </footer>
 
-
-<script src="js/main.js"></script>
 
 </body>
 
