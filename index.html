@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dr. Pawan Kumar Chaubey</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f6f2;
+            color: #171923;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(247, 246, 242, 0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #deded9;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 38px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #171923;
+            font-size: 14px;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-links a:hover {
+            color: #315d9a;
+        }
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 120px 8% 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #315d9a;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 7vw, 100px);
+            line-height: 0.98;
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            margin-bottom: 35px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            font-size: 21px;
+            line-height: 1.65;
+            color: #60636b;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 25px;
+
+            border: 1px solid #171923;
+            color: #171923;
+
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+
+            transition: all 0.25s ease;
+        }
+
+        .button:hover {
+            background: #171923;
+            color: white;
+        }
+
+        .section {
+            padding: 120px 8%;
+        }
+
+        .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #315d9a;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(38px, 5vw, 65px);
+            font-weight: 500;
+            margin-bottom: 60px;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .research-card {
+            min-height: 360px;
+
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            background: #e9e8e2;
+
+            border: 1px solid #d7d6d0;
+
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            background: #e2e3e7;
+        }
+
+        .research-number {
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            color: #315d9a;
+            margin-bottom: 18px;
+        }
+
+        .research-card h3 {
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .research-card p {
+            color: #666970;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .about {
+            background: #171923;
+            color: #f7f6f2;
+        }
+
+        .about-text {
+            max-width: 850px;
+            font-size: 24px;
+            line-height: 1.7;
+        }
+
+        footer {
+            padding: 50px 8%;
+
+            display: flex;
+            justify-content: space-between;
+
+            border-top: 1px solid #d7d6d0;
+
+            font-size: 13px;
+            color: #686b73;
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                height: 65px;
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 25px 70px;
+            }
+
+            h1 {
+                font-size: 54px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .section {
+                padding: 80px 25px;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .research-card {
+                min-height: 300px;
+                padding: 30px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">P.K. CHAUBEY</div>
+
+        <div class="nav-links">
+            <a href="#research">RESEARCH</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    Climate Scientist · Earth Observation · Climate Risk
+                </div>
+
+                <h1>
+                    Dr. Pawan<br>
+                    Kumar Chaubey
+                </h1>
+
+                <p class="hero-description">
+                    I study hydroclimatic extremes, climate variability
+                    and climate risk using climate observations,
+                    Earth system models and geospatial approaches.
+                </p>
+
+                <a class="button" href="#research">
+                    Explore Research
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="section" id="research">
+
+            <div class="section-label">
+                Research
+            </div>
+
+            <h2 class="section-title">
+                Climate science for a changing world.
+            </h2>
+
+            <div class="research-grid">
+
+                <div class="research-card">
+
+                    <div class="research-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Hydroclimate Extremes
+                    </h3>
+
+                    <p>
+                        Drought, extreme precipitation,
+                        hydroclimatic variability and
+                        changing climate extremes.
+                    </p>
+
+                </div>
+
+
+                <div class="research-card">
+
+                    <div class="research-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Climate Risk & Resilience
+                    </h3>
+
+                    <p>
+                        Climate risk, water security,
+                        infrastructure planning and
+                        decision-relevant climate information.
+                    </p>
+
+                </div>
+
+
+                <div class="research-card">
+
+                    <div class="research-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Urban & Southeast Asian Climate
+                    </h3>
+
+                    <p>
+                        Climate extremes across rapidly
+                        growing Southeast Asian cities
+                        and urban environments.
+                    </p>
+
+                </div>
+
+
+                <div class="research-card">
+
+                    <div class="research-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Climate Variability
+                    </h3>
+
+                    <p>
+                        ENSO, La Niña, IOD, monsoon
+                        variability and atmospheric
+                        teleconnections.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section about" id="about">
+
+            <div class="section-label">
+                About
+            </div>
+
+            <h2 class="section-title">
+                Research at the intersection of
+                climate, extremes and risk.
+            </h2>
+
+            <p class="about-text">
+                Dr. Pawan Kumar Chaubey is a climate scientist
+                working on hydroclimatic extremes, climate
+                variability, Earth observation and climate risk.
+                His research combines observations, climate models,
+                statistical methods and geospatial analysis to
+                understand climate-related risks across South
+                and Southeast Asia.
+            </p>
+
+        </section>
+
+
+        <section class="section" id="contact">
+
+            <div class="section-label">
+                Contact
+            </div>
+
+            <h2 class="section-title">
+                Let's connect.
+            </h2>
+
+            <p class="hero-description">
+                Research collaboration, climate science,
+                hydroclimate extremes and related opportunities.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div>
+            © 2026 Dr. Pawan Kumar Chaubey
+        </div>
+
+        <div>
+            Climate Science · Earth Observation · Climate Risk
+        </div>
+
+    </footer>
+
+</body>
+</html>
