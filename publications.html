@@ -1,374 +1,359 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =========================================================
+   PUBLICATIONS PAGE — MATCH CURRENT publications.html
+   ========================================================= */
 
-<head>
+.pub-page {
+  width: min(1060px, calc(100% - 70px));
+  margin: 0 auto;
+  padding: 105px 0 120px;
+}
 
-  <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+/* =========================================================
+   PUBLICATION HERO
+   ========================================================= */
 
-  <title>Publications | Pawan Kumar Chaubey</title>
+.pub-hero {
+  padding-bottom: 70px;
+  border-bottom: 1px solid var(--line);
+}
 
-  <meta name="description"
-        content="Publications of Dr. Pawan Kumar Chaubey on hydroclimate extremes, climate variability, rainfall extremes and climate modelling.">
+.pub-eyebrow {
+  margin-bottom: 20px;
 
-  <link rel="stylesheet" href="css/style.css">
+  color: var(--accent);
 
-</head>
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
 
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
 
-<body>
+.pub-title {
+  margin: 0 0 25px;
 
+  font-family: var(--serif);
+  font-size: clamp(58px, 7vw, 92px);
 
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
+  line-height: 0.95;
+  font-weight: 400;
 
-<header class="site-header">
+  letter-spacing: -0.045em;
+}
 
-  <a class="brand" href="index.html">
-    PAWAN KUMAR CHAUBEY
-  </a>
+.pub-intro {
+  max-width: 780px;
 
-  <button class="menu-toggle" type="button">
-    ☰
-  </button>
+  margin: 0;
 
-  <nav class="site-nav">
+  color: var(--muted);
 
-    <a href="index.html">
-      ABOUT
-    </a>
+  font-family: var(--sans);
+  font-size: 17px;
 
-    <a href="research.html">
-      RESEARCH
-    </a>
+  line-height: 1.8;
+}
 
-    <a href="bio.html">
-      BIO
-    </a>
 
-    <a class="active" href="publications.html">
-      PUBLICATION
-    </a>
+/* =========================================================
+   SCHOLAR / PROFILE LINKS
+   ========================================================= */
 
-    <a href="member.html">
-      MEMBER
-    </a>
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
 
-    <a href="gallery.html">
-      GALLERY
-    </a>
+  gap: 12px;
 
-  </nav>
+  margin-top: 32px;
+}
 
-</header>
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
 
+  padding: 10px 16px;
 
+  border: 1px solid var(--line);
+  border-radius: 100px;
 
-<!-- =====================================================
-     PUBLICATIONS PAGE
-     ===================================================== -->
+  background: transparent;
 
-<main class="pub-page">
+  color: var(--text);
 
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
 
-  <!-- ================= HERO ================= -->
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
 
-  <section class="pub-hero">
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
 
-    <div class="pub-eyebrow">
-      RESEARCH OUTPUT
-    </div>
+.profile-links a:hover {
+  background: #171717;
+  color: #ffffff;
 
-    <h1 class="pub-title">
-      Publications
-    </h1>
+  border-color: #171717;
 
-    <p class="pub-intro">
+  transform: translateY(-2px);
+}
 
-      Peer-reviewed research on hydroclimatic extremes,
-      extreme rainfall, drought, climate variability,
-      regional climate modelling and climate-change impacts
-      across South and Southeast Asia.
 
-    </p>
+/* =========================================================
+   PUBLICATION YEAR SECTION
+   ========================================================= */
 
+.pub-section {
+  padding: 55px 0 0;
+}
 
-    <!-- PROFILE LINKS -->
+.year-heading {
+  margin: 0;
 
-    <div class="profile-links">
+  padding-bottom: 22px;
 
-      <!-- Add your real profile URLs here later -->
+  border-bottom: 1px solid var(--line);
 
-      <a href="#" target="_blank" rel="noopener">
-        Google Scholar ↗
-      </a>
+  font-family: var(--serif);
+  font-size: 29px;
 
-      <a href="#" target="_blank" rel="noopener">
-        ORCID ↗
-      </a>
+  line-height: 1;
 
-      <a href="#" target="_blank" rel="noopener">
-        ResearchGate ↗
-      </a>
+  font-weight: 400;
 
-    </div>
+  letter-spacing: -0.02em;
+}
 
-  </section>
 
+/* =========================================================
+   PUBLICATION ITEM
+   ========================================================= */
 
+.pub-page .publication {
+  display: grid;
 
-  <!-- =================================================
-       2026
-       ================================================= -->
+  grid-template-columns: 55px 1fr;
 
-  <section class="pub-section">
+  gap: 24px;
 
-    <h2 class="year-heading">
-      2026
-    </h2>
+  padding: 34px 0 42px;
 
+  border-bottom: 1px solid var(--line);
+}
 
-    <article class="publication">
+.pub-number {
+  padding-top: 6px;
 
-      <div class="pub-number">
-        01
-      </div>
+  color: var(--accent);
 
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
 
-      <div>
+  letter-spacing: 0.13em;
+}
 
-        <h3 class="paper-title">
+.paper-title {
+  max-width: 850px;
 
-          Projected shifts in dry–wet extremes and possible
-          associated drivers over the Hindu Kush Himalaya
+  margin: 0 0 15px;
 
-        </h3>
+  font-family: var(--serif);
 
+  font-size: clamp(23px, 2.5vw, 31px);
 
-        <p class="authors">
+  line-height: 1.28;
 
-          <strong>Pawan K. Chaubey</strong>,
-          Raju Attada,
-          Adam D. Switzer,
-          K. P. Sooraj,
-          Dhrubajyoti Samanta,
-          Rohtash Saini
+  font-weight: 400;
 
-        </p>
+  letter-spacing: -0.02em;
+}
 
+.authors {
+  max-width: 850px;
 
-        <p class="journal">
+  margin: 0 0 8px;
 
-          <em>
-            Geomatics, Natural Hazards and Risk
-          </em>,
-          17(1), 2026.
+  color: #4d4b47;
 
-        </p>
+  font-family: var(--sans);
+  font-size: 14px;
 
+  line-height: 1.7;
+}
 
-        <div class="paper-links">
+.authors strong {
+  color: var(--text);
 
-          <a
-            href="https://doi.org/10.1080/19475705.2026.2692760"
-            target="_blank"
-            rel="noopener">
+  font-weight: 700;
+}
 
-            DOI ↗
+.journal {
+  margin: 0;
 
-          </a>
+  color: var(--muted);
 
-        </div>
+  font-family: var(--sans);
+  font-size: 14px;
 
-      </div>
+  line-height: 1.7;
+}
 
-    </article>
 
-  </section>
+/* =========================================================
+   DOI / ARTICLE LINKS
+   ========================================================= */
 
+.paper-links {
+  display: flex;
 
+  flex-wrap: wrap;
 
-  <!-- =================================================
-       2023
-       ================================================= -->
+  gap: 15px;
 
-  <section class="pub-section">
+  margin-top: 20px;
+}
 
-    <h2 class="year-heading">
-      2023
-    </h2>
+.paper-links a {
+  display: inline-flex;
+  align-items: center;
 
+  padding: 8px 13px;
 
-    <article class="publication">
+  border: 1px solid var(--line);
+  border-radius: 3px;
 
-      <div class="pub-number">
-        02
-      </div>
+  color: var(--text);
 
+  font-family: var(--sans);
+  font-size: 10px;
 
-      <div>
+  font-weight: 700;
 
-        <h3 class="paper-title">
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
 
-          Intensification of Extreme Rainfall in Indian River Basin:
-          Using Bias Corrected CMIP6 Climate Data
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
 
-        </h3>
+.paper-links a:hover {
+  background: #171717;
 
+  color: #ffffff;
 
-        <p class="authors">
+  border-color: #171717;
+}
 
-          <strong>Pawan K. Chaubey</strong>
-          and Rajesh K. Mall
 
-        </p>
+/* =========================================================
+   COMPLETE RECORD NOTE
+   ========================================================= */
 
+.pub-note {
+  margin-top: 65px;
 
-        <p class="journal">
+  padding: 38px 42px;
 
-          <em>
-            Earth's Future
-          </em>,
-          11, e2023EF003556.
+  background: #f0efeb;
 
-        </p>
+  border: 1px solid var(--line);
 
+  border-radius: 4px;
 
-        <div class="paper-links">
+  color: var(--muted);
 
-          <a
-            href="https://doi.org/10.1029/2023EF003556"
-            target="_blank"
-            rel="noopener">
+  font-family: var(--sans);
 
-            DOI ↗
+  font-size: 14px;
 
-          </a>
+  line-height: 1.8;
+}
 
-        </div>
+.pub-note strong {
+  color: var(--text);
 
-      </div>
+  font-family: var(--serif);
 
-    </article>
+  font-size: 23px;
 
-  </section>
+  font-weight: 400;
+}
 
 
+/* =========================================================
+   PUBLICATION PAGE — MOBILE
+   ========================================================= */
 
-  <!-- =================================================
-       2022
-       ================================================= -->
+@media (max-width: 700px) {
 
-  <section class="pub-section">
+  .pub-page {
+    width: calc(100% - 36px);
 
-    <h2 class="year-heading">
-      2022
-    </h2>
+    padding: 70px 0 80px;
+  }
 
+  .pub-hero {
+    padding-bottom: 50px;
+  }
 
-    <article class="publication">
+  .pub-title {
+    font-size: 58px;
+  }
 
-      <div class="pub-number">
-        03
-      </div>
+  .pub-intro {
+    font-size: 15px;
+  }
 
+  .profile-links {
+    gap: 8px;
+  }
 
-      <div>
+  .profile-links a {
+    font-size: 9px;
 
-        <h3 class="paper-title">
+    padding: 9px 12px;
+  }
 
-          Spatio-Temporal Changes in Extreme Rainfall Events
-          Over Different Indian River Basins
+  .pub-section {
+    padding-top: 42px;
+  }
 
-        </h3>
+  .year-heading {
+    font-size: 25px;
 
+    padding-bottom: 18px;
+  }
 
-        <p class="authors">
+  .pub-page .publication {
+    grid-template-columns: 32px 1fr;
 
-          <strong>Pawan K. Chaubey</strong>,
-          R. K. Mall,
-          Rohit Jaiswal,
-          Swagata Payra
+    gap: 10px;
 
-        </p>
+    padding: 27px 0 35px;
+  }
 
+  .paper-title {
+    font-size: 22px;
+  }
 
-        <p class="journal">
+  .authors,
+  .journal {
+    font-size: 13px;
+  }
 
-          <em>
-            Earth and Space Science
-          </em>,
-          9(3), e2021EA001930.
+  .pub-note {
+    padding: 28px 24px;
+  }
 
-        </p>
-
-
-        <div class="paper-links">
-
-          <a
-            href="https://doi.org/10.1029/2021EA001930"
-            target="_blank"
-            rel="noopener">
-
-            DOI ↗
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  </section>
-
-
-
-  <!-- =================================================
-       NOTE
-       ================================================= -->
-
-  <div class="pub-note">
-
-    <strong>
-      Complete publication record.
-    </strong>
-
-    <br><br>
-
-    For the most recent citation information and
-    publication metrics, please visit my Google Scholar,
-    ORCID or ResearchGate profiles.
-
-  </div>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer class="site-footer">
-
-  <span>
-    © 2026 Dr. Pawan Kumar Chaubey
-  </span>
-
-  <span>
-    Climate Science · Earth Observation · Climate Risk
-  </span>
-
-</footer>
-
-
-<script src="js/main.js"></script>
-
-</body>
-
-</html>
+}
