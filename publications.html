@@ -4,9 +4,7 @@
 
 <head>
 
-  <!-- =====================================================
-       PAGE INFORMATION
-       ===================================================== -->
+  <!-- PAGE INFORMATION -->
 
   <meta charset="utf-8">
 
@@ -15,166 +13,149 @@
     content="width=device-width, initial-scale=1"
   >
 
-  <title>
-    Publications | Dr. Pawan Kumar Chaubey
-  </title>
+  <title>Publications | Dr. Pawan Kumar Chaubey</title>
 
   <meta
     name="description"
-    content="Journal articles and research publications by Dr. Pawan Kumar Chaubey on climate extremes and hydroclimate."
+    content="Journal articles, co-authored papers, manuscripts under review and conference proceedings by Dr. Pawan Kumar Chaubey."
   >
 
-  <!-- Shared website stylesheets -->
+  <!-- Shared website styles -->
 
   <link rel="stylesheet" href="css/style.css">
-
   <link rel="stylesheet" href="css/theme.css">
 
 
   <!-- =====================================================
-       PUBLICATIONS PAGE STYLES
-       These styles apply only to this page.
+       PUBLICATION PAGE DESIGN
        ===================================================== -->
 
   <style>
 
-    /* MAIN CONTAINER */
-
     .pub-main {
       width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
-      padding: 70px 0 100px;
+      padding: 65px 0 90px;
     }
 
+    /* Main title banner */
 
-    /* PAGE HEADING BANNER */
-
-    .pub-main > .pub-intro {
-      display: block;
-
+    .pub-main .pub-intro {
       width: 100%;
       max-width: none;
       box-sizing: border-box;
-
       margin: 0;
-      padding: 42px 44px 46px;
-
-      background: linear-gradient(
-        120deg,
-        #20212b,
-        #303443
-      );
-
+      padding: 40px 44px 44px;
+      background: linear-gradient(120deg, #20212b, #303443);
       border: 0;
       border-bottom: 3px solid #efbd73;
     }
 
-    .pub-main > .pub-intro .pub-kicker {
-      margin: 0 0 16px;
-
+    .pub-main .pub-intro .pub-kicker {
+      margin: 0 0 15px;
       color: #efbd73;
-
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
       font-weight: 700;
-
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    .pub-main > .pub-intro h1 {
-      margin: 0 0 20px;
-
+    .pub-main .pub-intro h1 {
+      margin: 0 0 18px;
       color: #ffffff;
-
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(44px, 5vw, 64px);
+      font-size: clamp(42px, 5vw, 64px);
       font-weight: 400;
-
       line-height: 1.08;
       letter-spacing: -0.025em;
     }
 
-    .pub-main > .pub-intro p {
-      max-width: 760px;
+    .pub-main .pub-intro p {
+      max-width: 800px;
       margin: 0;
-
       color: #e2e4e9;
-
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-
       line-height: 1.8;
     }
 
+    /* Category headings */
 
-    /* PUBLICATION LIST */
+    .pub-category {
+      margin-top: 52px;
+    }
+
+    .pub-category-heading {
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e0e3e8;
+    }
+
+    .pub-category-heading .pub-kicker {
+      margin: 0 0 5px;
+      color: #a8732c;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .pub-category-heading h2 {
+      margin: 0;
+      color: #262832;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(27px, 3vw, 36px);
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    /* Publication list */
 
     .pub-list {
       display: grid;
-      gap: 24px;
-
-      margin-top: 45px;
+      gap: 18px;
     }
 
-    .pub-year-heading {
-      margin: 15px 0 0;
-
-      color: #262832;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-      font-weight: 400;
-
-      line-height: 1.3;
-    }
-
-
-    /* INDIVIDUAL PUBLICATION CARD */
+    /* Each paper */
 
     .pub-main .pub-card {
       display: grid;
-
-      grid-template-columns: 190px minmax(0, 1fr);
+      grid-template-columns: 165px minmax(0, 1fr);
       align-items: start;
-
-      gap: 30px;
-
+      gap: 25px;
       margin: 0;
-      padding: 25px;
-
+      padding: 22px;
       background: #ffffff;
-
       border: 1px solid #e0e3e8;
       border-left: 4px solid #efbd73;
-
-      box-shadow: 0 5px 18px rgba(32, 33, 43, 0.05);
+      box-shadow: 0 4px 15px rgba(32, 33, 43, 0.045);
     }
 
+    .pub-main .pub-card-text-only {
+      display: block;
+    }
 
-    /* JOURNAL COVER */
+    .pub-card-content {
+      min-width: 0;
+      padding: 2px 0;
+    }
+
+    /* Journal cover images */
 
     .pub-cover-link {
       display: block;
-
       width: 100%;
       overflow: hidden;
-
       background: #ffffff;
       border: 1px solid #e0e3e8;
     }
 
     .pub-cover {
       display: block;
-
       width: 100%;
       height: auto;
-
       aspect-ratio: 0.76;
       object-fit: contain;
-
       background: #ffffff;
-
       transition: transform 0.3s ease;
     }
 
@@ -182,48 +163,31 @@
       transform: scale(1.025);
     }
 
-
-    /* PUBLICATION DETAILS */
-
-    .pub-card-content {
-      min-width: 0;
-      padding: 4px 0;
-    }
+    /* Paper information */
 
     .pub-type {
-      margin: 0 0 12px;
-
+      margin: 0 0 9px;
       color: #a8732c;
-
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
       font-weight: 700;
-
-      letter-spacing: 0.15em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
     .pub-card h3 {
-      margin: 0 0 15px;
-
+      margin: 0 0 12px;
       color: #262832;
-
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(22px, 2.4vw, 30px);
+      font-size: clamp(21px, 2.3vw, 28px);
       font-weight: 400;
-
       line-height: 1.3;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.015em;
     }
 
     .pub-authors {
       margin: 0 0 9px;
-
       color: #5e6470;
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-
+      font-size: 13px;
       line-height: 1.8;
     }
 
@@ -233,157 +197,154 @@
     }
 
     .pub-journal {
-      margin: 0 0 17px;
-
+      margin: 0 0 8px;
       color: #5e6470;
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-
+      font-size: 13px;
       line-height: 1.8;
     }
 
+    .pub-details {
+      margin: 0;
+      color: #5e6470;
+      font-size: 12px;
+      line-height: 1.8;
+    }
 
-    /* ARTICLE LINKS */
+    .pub-impact {
+      display: inline-block;
+      margin-top: 5px;
+      color: #95652b;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* DOI and article links */
 
     .pub-links {
       display: flex;
       flex-wrap: wrap;
-
-      gap: 10px;
-      margin-top: 16px;
+      gap: 9px;
+      margin-top: 14px;
     }
 
     .pub-main .pub-links a {
       display: inline-block;
-
-      padding: 9px 14px;
-
+      padding: 8px 12px;
+      border: 1px solid #dec69f;
       color: #81571f;
       background: #ffffff;
-
-      border: 1px solid #dec69f;
-      border-radius: 2px;
-
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
       font-weight: 700;
-
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-decoration: none;
-
       transition: all 0.2s ease;
     }
 
     .pub-main .pub-links a:hover {
-      color: #ffffff;
       background: #20212b;
+      color: #ffffff;
       border-color: #20212b;
     }
 
+    /* Under-review status */
 
-    /* TEXT-ONLY PUBLICATION */
-
-    .pub-main .pub-card-text-only {
-      display: block;
+    .pub-status {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      border: 1px solid #e8d4af;
+      background: #fff7e9;
+      color: #845a25;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
     }
 
-
-    /* COMPLETE RECORD NOTE */
+    /* Note at the end */
 
     .pub-note {
-      margin-top: 55px;
-      padding: 35px;
-
+      margin-top: 50px;
+      padding: 30px;
       background: #f5f6f8;
       border: 1px solid #e0e3e8;
       border-top: 3px solid #efbd73;
     }
 
     .pub-note h2 {
-      margin: 0 0 12px;
-
+      margin: 0 0 10px;
       color: #262832;
-
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 400;
-
-      line-height: 1.3;
     }
 
     .pub-note p {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0;
-
       color: #5e6470;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-
+      font-size: 13px;
       line-height: 1.8;
     }
 
+    /* Tablet */
 
-    /* TABLET */
-
-    @media (max-width: 820px) {
+    @media (max-width: 800px) {
 
       .pub-main {
-        width: calc(100% - 40px);
-        padding: 50px 0 70px;
-      }
-
-      .pub-main > .pub-intro {
-        padding: 32px 28px 35px;
+        width: calc(100% - 36px);
+        padding: 45px 0 65px;
       }
 
       .pub-main .pub-card {
-        grid-template-columns: 150px minmax(0, 1fr);
-        gap: 22px;
-        padding: 20px;
+        grid-template-columns: 125px minmax(0, 1fr);
+        gap: 18px;
+        padding: 17px;
+      }
+
+      .pub-main .pub-intro {
+        padding: 32px 26px 35px;
       }
 
     }
 
+    /* Mobile */
 
-    /* MOBILE */
-
-    @media (max-width: 600px) {
+    @media (max-width: 560px) {
 
       .pub-main {
-        width: calc(100% - 32px);
-        padding: 35px 0 55px;
+        width: calc(100% - 28px);
+        padding: 30px 0 50px;
       }
 
-      .pub-main > .pub-intro {
-        padding: 28px 20px 30px;
+      .pub-main .pub-intro {
+        padding: 26px 19px 28px;
       }
 
-      .pub-main > .pub-intro h1 {
-        font-size: 42px;
+      .pub-main .pub-intro h1 {
+        font-size: 40px;
       }
 
-      .pub-main > .pub-intro p {
+      .pub-main .pub-intro p {
         font-size: 14px;
       }
 
-      .pub-list {
-        gap: 20px;
-        margin-top: 30px;
+      .pub-category {
+        margin-top: 38px;
       }
 
-      .pub-year-heading {
-        font-size: 26px;
+      .pub-category-heading h2 {
+        font-size: 28px;
       }
 
       .pub-main .pub-card {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 18px;
+        gap: 17px;
+        padding: 17px;
       }
 
       .pub-cover-link {
-        width: min(220px, 100%);
+        width: min(190px, 100%);
       }
 
       .pub-card h3 {
@@ -391,11 +352,7 @@
       }
 
       .pub-note {
-        padding: 25px 20px;
-      }
-
-      .pub-note h2 {
-        font-size: 25px;
+        padding: 23px 19px;
       }
 
     }
@@ -414,14 +371,9 @@
 
 <header class="site-header">
 
-  <!-- Website name links to the homepage -->
-
   <a class="brand" href="index.html">
     PAWAN KUMAR CHAUBEY
   </a>
-
-
-  <!-- Mobile menu button -->
 
   <button
     class="menu-toggle"
@@ -431,34 +383,14 @@
     ☰
   </button>
 
-
-  <!-- Main navigation -->
-
   <nav class="site-nav">
 
-    <a href="about.html">
-      ABOUT
-    </a>
-
-    <a href="research.html">
-      RESEARCH
-    </a>
-
-    <a href="bio.html">
-      BIO
-    </a>
-
-    <a class="active" href="publications.html">
-      PUBLICATION
-    </a>
-
-    <a href="member.html">
-      MEMBER
-    </a>
-
-    <a href="gallery.html">
-      GALLERY
-    </a>
+    <a href="about.html">ABOUT</a>
+    <a href="research.html">RESEARCH</a>
+    <a href="bio.html">BIO</a>
+    <a class="active" href="publications.html">PUBLICATION</a>
+    <a href="member.html">MEMBER</a>
+    <a href="gallery.html">GALLERY</a>
 
   </nav>
 
@@ -467,7 +399,8 @@
 
 
 <!-- =====================================================
-     MAIN PUBLICATIONS CONTENT
+     PUBLICATIONS
+     No separate year headings
      ===================================================== -->
 
 <main class="pub-main">
@@ -481,14 +414,13 @@
       RESEARCH OUTPUT
     </div>
 
-    <h1>
-      Publications
-    </h1>
+    <h1>Publications</h1>
 
     <p>
-      Peer-reviewed research on hydroclimatic extremes,
-      extreme rainfall, drought, climate variability,
-      regional climate modelling and climate risk.
+      Peer-reviewed journal articles, co-authored publications,
+      manuscripts under review and conference proceedings in
+      climate extremes, hydroclimate, climate modelling and
+      geospatial research.
     </p>
 
   </section>
@@ -496,235 +428,761 @@
 
 
   <!-- =====================================================
-       PUBLICATION LIST
+       FIRST-AUTHOR PUBLICATIONS
        ===================================================== -->
 
-  <section class="pub-list">
+  <section class="pub-category">
+
+    <div class="pub-category-heading">
+
+      <p class="pub-kicker">
+        FIRST AUTHOR
+      </p>
+
+      <h2>First-author publications</h2>
+
+    </div>
 
 
-    <!-- ===================================================
-         2026 PUBLICATION
-         =================================================== -->
-
-    <h2 class="pub-year-heading">
-      2026
-    </h2>
+    <div class="pub-list">
 
 
-    <article class="pub-card">
+      <!-- 2026: GEOMATICS -->
 
+      <article class="pub-card">
 
-      <!-- Journal cover -->
-
-      <a
-        class="pub-cover-link"
-        href="https://doi.org/10.1080/19475705.2026.2692760"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open the 2026 journal article"
-      >
-
-        <img
-          class="pub-cover"
-          src="assets/geomatics-natural-hazards-cover.png"
-          alt="Geomatics, Natural Hazards and Risk journal cover"
-          loading="lazy"
+        <a
+          class="pub-cover-link"
+          href="https://doi.org/10.1080/19475705.2026.2692760"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Geomatics, Natural Hazards and Risk article"
         >
 
-      </a>
-
-
-      <!-- Paper information -->
-
-      <div class="pub-card-content">
-
-        <div class="pub-type">
-          JOURNAL ARTICLE
-        </div>
-
-        <h3>
-          Projected shifts in dry–wet extremes and possible
-          associated drivers over the Hindu Kush Himalaya
-        </h3>
-
-        <p class="pub-authors">
-          <strong>Pawan K. Chaubey</strong>,
-          Raju Attada, Adam D. Switzer, K. P. Sooraj,
-          Dhrubajyoti Samanta and Rohtash Saini
-        </p>
-
-        <p class="pub-journal">
-          <em>Geomatics, Natural Hazards and Risk</em>,
-          17(1), 2026.
-        </p>
-
-        <div class="pub-links">
-
-          <a
-            href="https://doi.org/10.1080/19475705.2026.2692760"
-            target="_blank"
-            rel="noopener noreferrer"
+          <img
+            class="pub-cover"
+            src="assets/geomatics-natural-hazards-cover.png"
+            alt="Geomatics, Natural Hazards and Risk journal cover"
+            loading="lazy"
           >
-            DOI ↗
-          </a>
 
-          <a
-            href="https://www.tandfonline.com/doi/full/10.1080/19475705.2026.2692760"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            VIEW ARTICLE ↗
-          </a>
+        </a>
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            Projected shifts in dry–wet extremes and possible
+            associated drivers over the Hindu Kush Himalaya
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong>
+            Attada, R., Switzer, A. D., Sooraj, K. P.,
+            Samanta, D., &amp; Saini, R. (2026).
+          </p>
+
+          <p class="pub-journal">
+            <em>Geomatics, Natural Hazards and Risk</em>,
+            17(1).
+          </p>
+
+          <span class="pub-impact">[IF: 4.9]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1080/19475705.2026.2692760"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
 
         </div>
 
-      </div>
-
-    </article>
+      </article>
 
 
 
-    <!-- ===================================================
-         2023 PUBLICATION
-         =================================================== -->
+      <!-- 2023: EARTH'S FUTURE -->
 
-    <h2 class="pub-year-heading">
-      2023
-    </h2>
+      <article class="pub-card">
 
-
-    <article class="pub-card">
-
-
-      <!-- Journal cover -->
-
-      <a
-        class="pub-cover-link"
-        href="https://doi.org/10.1029/2023EF003556"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open the 2023 journal article"
-      >
-
-        <img
-          class="pub-cover"
-          src="assets/earths-future-cover.png"
-          alt="Earth's Future journal cover"
-          loading="lazy"
+        <a
+          class="pub-cover-link"
+          href="https://doi.org/10.1029/2023EF003556"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Earth's Future article"
         >
 
-      </a>
-
-
-      <!-- Paper information -->
-
-      <div class="pub-card-content">
-
-        <div class="pub-type">
-          JOURNAL ARTICLE
-        </div>
-
-        <h3>
-          Intensification of Extreme Rainfall in Indian River
-          Basin: Using Bias Corrected CMIP6 Climate Data
-        </h3>
-
-        <p class="pub-authors">
-          <strong>Pawan K. Chaubey</strong>
-          and Rajesh K. Mall
-        </p>
-
-        <p class="pub-journal">
-          <em>Earth's Future</em>,
-          11, e2023EF003556, 2023.
-        </p>
-
-        <div class="pub-links">
-
-          <a
-            href="https://doi.org/10.1029/2023EF003556"
-            target="_blank"
-            rel="noopener noreferrer"
+          <img
+            class="pub-cover"
+            src="assets/earths-future-cover.png"
+            alt="Earth's Future journal cover"
+            loading="lazy"
           >
-            DOI ↗
-          </a>
+
+        </a>
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            Intensification of extreme rainfall in Indian River Basin:
+            Using Bias Corrected CMIP6 Climate Data
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong>
+            &amp; Mall, R. K. (2023).
+          </p>
+
+          <p class="pub-journal">
+            <em>Earth's Future</em>,
+            11, e2023EF003556.
+          </p>
+
+          <span class="pub-impact">[IF: 8.85]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1029/2023EF003556"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
 
         </div>
 
-      </div>
-
-    </article>
+      </article>
 
 
 
-    <!-- ===================================================
-         2022 PUBLICATION
-         Add the journal cover when it is available.
-         =================================================== -->
+      <!-- 2023: SUSTAINABILITY -->
 
-    <h2 class="pub-year-heading">
-      2022
-    </h2>
+      <article class="pub-card pub-card-text-only">
 
+        <div class="pub-card-content">
 
-    <article class="pub-card pub-card-text-only">
+          <div class="pub-type">JOURNAL ARTICLE</div>
 
-      <div class="pub-card-content">
+          <h3>
+            Changes in Extremes Rainfall Events in Present and Future
+            Climate Scenarios over the Teesta River Basin, India
+          </h3>
 
-        <div class="pub-type">
-          JOURNAL ARTICLE
-        </div>
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong>
+            Mall, R. K., &amp; Srivastava, P. K. (2023).
+          </p>
 
-        <h3>
-          Spatio-Temporal Changes in Extreme Rainfall Events
-          Over Different Indian River Basins
-        </h3>
+          <p class="pub-journal">
+            <em>Sustainability</em>, 15(5), 4668.
+          </p>
 
-        <p class="pub-authors">
-          <strong>Pawan K. Chaubey</strong>,
-          R. K. Mall, Rohit Jaiswal and Swagata Payra
-        </p>
+          <span class="pub-impact">[IF: 3.8]</span>
 
-        <p class="pub-journal">
-          <em>Earth and Space Science</em>,
-          9(3), e2021EA001930, 2022.
-        </p>
-
-        <div class="pub-links">
-
-          <a
-            href="https://doi.org/10.1029/2021EA001930"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            DOI ↗
-          </a>
+          <div class="pub-links">
+            <a href="https://doi.org/10.3390/su15054668"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
 
         </div>
 
-      </div>
+      </article>
 
-    </article>
 
+
+      <!-- 2022: EARTH AND SPACE SCIENCE -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            Spatio-temporal changes in extreme rainfall events
+            over different Indian river basins
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong>
+            Mall, R. K., Jaiswal, R., &amp; Payra, S. (2022).
+          </p>
+
+          <p class="pub-journal">
+            <em>Earth and Space Science</em>, AGU,
+            9, e2021EA001930.
+          </p>
+
+          <span class="pub-impact">[IF: 3.68]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1029/2021EA001930"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 2021: ENVIRONMENT, DEVELOPMENT AND SUSTAINABILITY -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            Integrated assessment of extreme events and hydrological
+            responses of Indo-Nepal Gandak River Basin
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong>
+            Srivastava, P. K., Gupta, A., &amp; Mall, R. K. (2021).
+          </p>
+
+          <p class="pub-journal">
+            <em>Environmental Development and Sustainability</em>,
+            23, 8643–8668.
+          </p>
+
+          <span class="pub-impact">[IF: 4.35]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s10668-020-00986-6"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 2019: SPATIAL INFORMATION RESEARCH -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            A geo-spatial inter-relationship with drainage morphometry,
+            landscapes and NDVI in the context of climate change:
+            a case study over the Varuna river basin (India)
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong>
+            Kundu, A., &amp; Mall, R. K. (2019).
+          </p>
+
+          <p class="pub-journal">
+            <em>Spatial Information Research</em>,
+            27, 627–641.
+          </p>
+
+          <span class="pub-impact">[IF: 2.1]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s41324-019-00264-2"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
 
   </section>
 
 
 
   <!-- =====================================================
-       COMPLETE PUBLICATION RECORD
+       CO-AUTHORED PUBLICATIONS
+       ===================================================== -->
+
+  <section class="pub-category">
+
+    <div class="pub-category-heading">
+
+      <p class="pub-kicker">CO-AUTHOR</p>
+
+      <h2>Co-authored publications</h2>
+
+    </div>
+
+
+    <div class="pub-list">
+
+
+      <!-- 2024: INTERNATIONAL JOURNAL OF CLIMATOLOGY -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            Downscaling of CMIP6-Global Climate Model and Evaluation
+            of Heat Wave Events using Deep learning methods
+          </h3>
+
+          <p class="pub-authors">
+            Chaturvedi, M., Mall, R. K., Singh, S.,
+            <strong>Chaubey, P. K.,</strong> Pandey, A. (2024).
+          </p>
+
+          <p class="pub-journal">
+            <em>International Journal of Climatology</em>, 1–20.
+          </p>
+
+          <span class="pub-impact">[IF: 3.36]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1002/joc.8366"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 2024: URBAN CLIMATE -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            How virtuous are the bias-corrected CMIP6 models in the
+            simulation of Heatwave over different meteorological
+            subdivisions of India?
+          </h3>
+
+          <p class="pub-authors">
+            Singh, S., Mall, R. K., Singh, P. K., Bhatla, R.,
+            <strong>Chaubey, P. K.</strong> (2024).
+          </p>
+
+          <p class="pub-journal">
+            <em>Urban Climate</em>.
+          </p>
+
+          <span class="pub-impact">[IF: 6.64]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.uclim.2024.101936"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 2017: APPLIED GEOMATICS -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">JOURNAL ARTICLE</div>
+
+          <h3>
+            Geoinformatics for assessing the inferences of quantitative
+            drainage morphometry of the Narmada Basin in India
+          </h3>
+
+          <p class="pub-authors">
+            Rai, P. K., <strong>Chaubey, P. K.</strong>,
+            Mohan, K., &amp; Singh, P. (2017).
+          </p>
+
+          <p class="pub-journal">
+            <em>Applied Geomatics</em>, 9, 167–189.
+          </p>
+
+          <span class="pub-impact">[IF: 2.3]</span>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s12518-017-0191-1"
+               target="_blank" rel="noopener noreferrer">
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       MANUSCRIPTS UNDER REVIEW
+       ===================================================== -->
+
+  <section class="pub-category">
+
+    <div class="pub-category-heading">
+
+      <p class="pub-kicker">IN PROGRESS</p>
+
+      <h2>Under review</h2>
+
+    </div>
+
+
+    <div class="pub-list">
+
+
+      <!-- UNDER REVIEW 01 -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <span class="pub-status">Under review</span>
+
+          <h3>
+            Projected Hydro-Climate Extremes Under 1.5°C and 2°C
+            Warming over Indian River Basins (IRBs)
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong>
+            Mall, R. K., B. B. Singh, &amp; Adam D. Switzer (2026).
+          </p>
+
+          <p class="pub-journal">
+            American Meteorological Society (AMS).
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- UNDER REVIEW 02 -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <span class="pub-status">Under review</span>
+
+          <h3>
+            Climate Vulnerability Index for Resilient Management
+            Strategies in Drought-prone Bundelkhand region, India
+          </h3>
+
+          <p class="pub-authors">
+            Chaturvedi, A., Mall, R. K., Singh, S.,
+            <strong>Chaubey, P. K.,</strong> Abhilash, P. C.
+          </p>
+
+          <p class="pub-journal">
+            <em>Land Use Policy</em> (Elsevier).
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- UNDER REVIEW 03 -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <span class="pub-status">Under review</span>
+
+          <h3>
+            Dynamical assessment of simultaneous flood and drought
+            years over India using regional climate model
+          </h3>
+
+          <p class="pub-authors">
+            Bhatla, R., Mall, R. K., Verma, S., Pant, M.,
+            <strong>Chaubey, P. K.,</strong> Sinha, P., Verma, A.,
+            Singh, P. K.
+          </p>
+
+          <p class="pub-journal">
+            <em>Climate Dynamics</em> (Springer).
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       CONFERENCE PROCEEDINGS
+       ===================================================== -->
+
+  <section class="pub-category">
+
+    <div class="pub-category-heading">
+
+      <p class="pub-kicker">CONFERENCE CONTRIBUTIONS</p>
+
+      <h2>Conference proceedings</h2>
+
+    </div>
+
+
+    <div class="pub-list">
+
+
+      <!-- AGU 2024 -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">CONFERENCE ABSTRACT</div>
+
+          <h3>
+            Projected Changes in Hydroclimate Extremes in Hindu Kush
+            Himalaya: Insights from CMIP6 models
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong> Saini, R., &amp; Attada, R. (2024).
+          </p>
+
+          <p class="pub-journal">
+            <em>AGU Fall Meeting Abstracts</em>.
+          </p>
+
+          <div class="pub-links">
+            <a
+              href="https://ui.adsabs.harvard.edu/abs/2024AGUFM.A07...16C"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW ABSTRACT ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- EGU 2024 -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">CONFERENCE ABSTRACT</div>
+
+          <h3>
+            Projected changes in Compound Extremes under low to
+            high emission SSPs Scenarios
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong> &amp; Attada, R. (2024).
+          </p>
+
+          <p class="pub-journal">
+            EGU General Assembly 2024, Vienna, Austria,
+            14–19 April 2024, EGU24-14265.
+          </p>
+
+          <div class="pub-links">
+            <a
+              href="https://doi.org/10.5194/egusphere-egu24-14265"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- AGU 2022: FLOODING -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">CONFERENCE ABSTRACT</div>
+
+          <h3>
+            Are Indian River Basins (IRBs) going to be more Flooded
+            in Future Warming Climate?
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong> &amp; Mall, R. K. (2022).
+          </p>
+
+          <p class="pub-journal">
+            <em>AGU Fall Meeting 2022</em>. AGU.
+          </p>
+
+          <div class="pub-links">
+            <a
+              href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A35P1680C"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW ABSTRACT ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- AGU 2022: RAINFALL SHIFTS -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">CONFERENCE ABSTRACT</div>
+
+          <h3>
+            Have Rainfall Extremes Shifted over the Western Indian
+            River Basins in the Last 119 years?
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong> &amp; Mall, R. K. (2022).
+          </p>
+
+          <p class="pub-journal">
+            AGU Fall Meeting 2022, Chicago, IL,
+            12–16 December 2022, abstract A46E-10.
+          </p>
+
+          <div class="pub-links">
+            <a
+              href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A46E..10C"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW ABSTRACT ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- EGU 2022 -->
+
+      <article class="pub-card pub-card-text-only">
+
+        <div class="pub-card-content">
+
+          <div class="pub-type">CONFERENCE ABSTRACT</div>
+
+          <h3>
+            Western shifting of Extreme Rainfall Events over the
+            different Indian River Basins in the last 119 years
+          </h3>
+
+          <p class="pub-authors">
+            <strong>Chaubey, P. K.,</strong> &amp; Mall, R. K. (2022).
+          </p>
+
+          <p class="pub-journal">
+            EGU General Assembly 2022, Vienna, Austria,
+            23–27 May 2022, EGU22-188.
+          </p>
+
+          <div class="pub-links">
+            <a
+              href="https://doi.org/10.5194/egusphere-egu22-188"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       END NOTE
        ===================================================== -->
 
   <section class="pub-note">
 
-    <h2>
-      Publications and research outputs
-    </h2>
+    <h2>Complete publication record</h2>
 
     <p>
-      Visit the DOI links above to access individual articles.
-      Additional publications and journal covers can be added
-      to this page as your research record grows.
+      This page includes journal articles, co-authored papers,
+      manuscripts under review and conference proceedings.
+      The impact-factor values are reproduced from the information
+      provided and should be checked against the relevant
+      reporting year before formal use.
     </p>
 
   </section>
@@ -751,11 +1209,7 @@
 </footer>
 
 
-
-<!-- EXISTING MOBILE NAVIGATION SCRIPT -->
-
 <script src="js/main.js"></script>
-
 
 </body>
 
