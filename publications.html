@@ -4,8 +4,6 @@
 
 <head>
 
-  <!-- PAGE INFORMATION -->
-
   <meta charset="utf-8">
 
   <meta
@@ -20,14 +18,12 @@
     content="Journal articles, co-authored papers, manuscripts under review and conference proceedings by Dr. Pawan Kumar Chaubey."
   >
 
-  <!-- Shared website styles -->
-
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/theme.css">
 
 
   <!-- =====================================================
-       PUBLICATION PAGE DESIGN
+       PUBLICATION PAGE STYLES
        ===================================================== -->
 
   <style>
@@ -108,14 +104,12 @@
       line-height: 1.25;
     }
 
-    /* Publication list */
+    /* Publication cards */
 
     .pub-list {
       display: grid;
       gap: 18px;
     }
-
-    /* Each paper */
 
     .pub-main .pub-card {
       display: grid;
@@ -130,8 +124,44 @@
       box-shadow: 0 4px 15px rgba(32, 33, 43, 0.045);
     }
 
+    /* Text-only publications get a matching visual tile */
+
     .pub-main .pub-card-text-only {
-      display: block;
+      display: grid;
+      grid-template-columns: 165px minmax(0, 1fr);
+    }
+
+    .pub-main .pub-card-text-only::before {
+      content: "JOURNAL ARTICLE";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 210px;
+      padding: 14px;
+      aspect-ratio: 0.76;
+      border: 1px solid #e0e3e8;
+      border-top: 4px solid #efbd73;
+      background: linear-gradient(150deg, #f4f6f8, #fff7e9);
+      color: #89612b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .pub-main .pub-review::before {
+      content: "MANUSCRIPT UNDER REVIEW";
+      background: linear-gradient(150deg, #f5f5f6, #ececf0);
+      color: #656775;
+    }
+
+    .pub-main .pub-conference::before {
+      content: "CONFERENCE ABSTRACT";
+      background: linear-gradient(150deg, #e9f1f7, #f8fafc);
+      color: #35667c;
     }
 
     .pub-card-content {
@@ -163,7 +193,7 @@
       transform: scale(1.025);
     }
 
-    /* Paper information */
+    /* Paper details */
 
     .pub-type {
       margin: 0 0 9px;
@@ -203,13 +233,6 @@
       line-height: 1.8;
     }
 
-    .pub-details {
-      margin: 0;
-      color: #5e6470;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
     .pub-impact {
       display: inline-block;
       margin-top: 5px;
@@ -218,18 +241,22 @@
       font-weight: 700;
     }
 
-    /* DOI and article links */
+    /* DOI and VIEW ARTICLE buttons in one row */
 
     .pub-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
+      align-items: center;
+      gap: 10px;
       margin-top: 14px;
     }
 
     .pub-main .pub-links a {
-      display: inline-block;
-      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 8px 13px;
       border: 1px solid #dec69f;
       color: #81571f;
       background: #ffffff;
@@ -237,6 +264,7 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       text-decoration: none;
+      white-space: nowrap;
       transition: all 0.2s ease;
     }
 
@@ -246,7 +274,7 @@
       border-color: #20212b;
     }
 
-    /* Under-review status */
+    /* Manuscripts under review */
 
     .pub-status {
       display: inline-block;
@@ -261,7 +289,7 @@
       text-transform: uppercase;
     }
 
-    /* Note at the end */
+    /* Closing note */
 
     .pub-note {
       margin-top: 50px;
@@ -296,14 +324,19 @@
         padding: 45px 0 65px;
       }
 
-      .pub-main .pub-card {
+      .pub-main .pub-intro {
+        padding: 32px 26px 35px;
+      }
+
+      .pub-main .pub-card,
+      .pub-main .pub-card-text-only {
         grid-template-columns: 125px minmax(0, 1fr);
         gap: 18px;
         padding: 17px;
       }
 
-      .pub-main .pub-intro {
-        padding: 32px 26px 35px;
+      .pub-main .pub-card-text-only::before {
+        min-height: 175px;
       }
 
     }
@@ -337,7 +370,8 @@
         font-size: 28px;
       }
 
-      .pub-main .pub-card {
+      .pub-main .pub-card,
+      .pub-main .pub-card-text-only {
         grid-template-columns: 1fr;
         gap: 17px;
         padding: 17px;
@@ -345,6 +379,12 @@
 
       .pub-cover-link {
         width: min(190px, 100%);
+      }
+
+      .pub-main .pub-card-text-only::before {
+        width: min(190px, 100%);
+        min-height: 0;
+        aspect-ratio: 0.76;
       }
 
       .pub-card h3 {
@@ -384,14 +424,12 @@
   </button>
 
   <nav class="site-nav">
-
     <a href="about.html">ABOUT</a>
     <a href="research.html">RESEARCH</a>
     <a href="bio.html">BIO</a>
     <a class="active" href="publications.html">PUBLICATION</a>
     <a href="member.html">MEMBER</a>
     <a href="gallery.html">GALLERY</a>
-
   </nav>
 
 </header>
@@ -400,7 +438,6 @@
 
 <!-- =====================================================
      PUBLICATIONS
-     No separate year headings
      ===================================================== -->
 
 <main class="pub-main">
@@ -417,10 +454,10 @@
     <h1>Publications</h1>
 
     <p>
-      Peer-reviewed journal articles, co-authored publications,
-      manuscripts under review and conference proceedings in
-      climate extremes, hydroclimate, climate modelling and
-      geospatial research.
+      Journal articles, co-authored publications, manuscripts
+      under review and conference contributions in climate
+      extremes, hydroclimate, climate modelling and geospatial
+      research.
     </p>
 
   </section>
@@ -434,20 +471,14 @@
   <section class="pub-category">
 
     <div class="pub-category-heading">
-
-      <p class="pub-kicker">
-        FIRST AUTHOR
-      </p>
-
+      <p class="pub-kicker">FIRST AUTHOR</p>
       <h2>First-author publications</h2>
-
     </div>
-
 
     <div class="pub-list">
 
 
-      <!-- 2026: GEOMATICS -->
+      <!-- FIRST AUTHOR 1: 2026 -->
 
       <article class="pub-card">
 
@@ -456,16 +487,14 @@
           href="https://doi.org/10.1080/19475705.2026.2692760"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open Geomatics, Natural Hazards and Risk article"
+          aria-label="Open 2026 journal article"
         >
-
           <img
             class="pub-cover"
             src="assets/geomatics-natural-hazards-cover.png"
             alt="Geomatics, Natural Hazards and Risk journal cover"
             loading="lazy"
           >
-
         </a>
 
         <div class="pub-card-content">
@@ -484,17 +513,16 @@
           </p>
 
           <p class="pub-journal">
-            <em>Geomatics, Natural Hazards and Risk</em>,
-            17(1).
+            <em>Geomatics, Natural Hazards and Risk</em>, 17(1).
           </p>
 
           <span class="pub-impact">[IF: 4.9]</span>
 
           <div class="pub-links">
             <a href="https://doi.org/10.1080/19475705.2026.2692760"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/chaubey-2026-hkh.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -503,7 +531,7 @@
 
 
 
-      <!-- 2023: EARTH'S FUTURE -->
+      <!-- FIRST AUTHOR 2: 2023 -->
 
       <article class="pub-card">
 
@@ -514,14 +542,12 @@
           rel="noopener noreferrer"
           aria-label="Open Earth's Future article"
         >
-
           <img
             class="pub-cover"
             src="assets/earths-future-cover.png"
             alt="Earth's Future journal cover"
             loading="lazy"
           >
-
         </a>
 
         <div class="pub-card-content">
@@ -534,22 +560,20 @@
           </h3>
 
           <p class="pub-authors">
-            <strong>Chaubey, P. K.,</strong>
-            &amp; Mall, R. K. (2023).
+            <strong>Chaubey, P. K.,</strong> and Mall, R. K. (2023).
           </p>
 
           <p class="pub-journal">
-            <em>Earth's Future</em>,
-            11, e2023EF003556.
+            <em>Earth's Future</em>, 11, e2023EF003556.
           </p>
 
           <span class="pub-impact">[IF: 8.85]</span>
 
           <div class="pub-links">
             <a href="https://doi.org/10.1029/2023EF003556"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/chaubey-2023-earths-future.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -558,7 +582,7 @@
 
 
 
-      <!-- 2023: SUSTAINABILITY -->
+      <!-- FIRST AUTHOR 3: 2023 -->
 
       <article class="pub-card pub-card-text-only">
 
@@ -573,7 +597,7 @@
 
           <p class="pub-authors">
             <strong>Chaubey, P. K.,</strong>
-            Mall, R. K., &amp; Srivastava, P. K. (2023).
+            Mall, R. K., Srivastava, P. K. (2023).
           </p>
 
           <p class="pub-journal">
@@ -584,9 +608,9 @@
 
           <div class="pub-links">
             <a href="https://doi.org/10.3390/su15054668"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/chaubey-2023-teesta-sustainability.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -595,7 +619,7 @@
 
 
 
-      <!-- 2022: EARTH AND SPACE SCIENCE -->
+      <!-- FIRST AUTHOR 4: 2022 -->
 
       <article class="pub-card pub-card-text-only">
 
@@ -622,9 +646,9 @@
 
           <div class="pub-links">
             <a href="https://doi.org/10.1029/2021EA001930"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/chaubey-2022-indian-river-basins.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -633,7 +657,7 @@
 
 
 
-      <!-- 2021: ENVIRONMENT, DEVELOPMENT AND SUSTAINABILITY -->
+      <!-- FIRST AUTHOR 5: 2021 -->
 
       <article class="pub-card pub-card-text-only">
 
@@ -660,9 +684,9 @@
 
           <div class="pub-links">
             <a href="https://doi.org/10.1007/s10668-020-00986-6"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/chaubey-2021-gandak-basin.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -671,7 +695,7 @@
 
 
 
-      <!-- 2019: SPATIAL INFORMATION RESEARCH -->
+      <!-- FIRST AUTHOR 6: 2019 -->
 
       <article class="pub-card pub-card-text-only">
 
@@ -691,17 +715,16 @@
           </p>
 
           <p class="pub-journal">
-            <em>Spatial Information Research</em>,
-            27, 627–641.
+            <em>Spatial Information Research</em>, 27, 627–641.
           </p>
 
           <span class="pub-impact">[IF: 2.1]</span>
 
           <div class="pub-links">
             <a href="https://doi.org/10.1007/s41324-019-00264-2"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/chaubey-2019-varuna-basin.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -722,18 +745,14 @@
   <section class="pub-category">
 
     <div class="pub-category-heading">
-
       <p class="pub-kicker">CO-AUTHOR</p>
-
       <h2>Co-authored publications</h2>
-
     </div>
-
 
     <div class="pub-list">
 
 
-      <!-- 2024: INTERNATIONAL JOURNAL OF CLIMATOLOGY -->
+      <!-- CO-AUTHOR 1: 2024 -->
 
       <article class="pub-card pub-card-text-only">
 
@@ -759,9 +778,9 @@
 
           <div class="pub-links">
             <a href="https://doi.org/10.1002/joc.8366"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/chaturvedi-2024-downscaling-cmip6-heatwaves.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -770,7 +789,7 @@
 
 
 
-      <!-- 2024: URBAN CLIMATE -->
+      <!-- CO-AUTHOR 2: 2024 -->
 
       <article class="pub-card pub-card-text-only">
 
@@ -797,9 +816,9 @@
 
           <div class="pub-links">
             <a href="https://doi.org/10.1016/j.uclim.2024.101936"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/singh-2024-cmip6-heatwaves-urban-climate.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -808,7 +827,7 @@
 
 
 
-      <!-- 2017: APPLIED GEOMATICS -->
+      <!-- CO-AUTHOR 3: 2017 -->
 
       <article class="pub-card pub-card-text-only">
 
@@ -834,9 +853,9 @@
 
           <div class="pub-links">
             <a href="https://doi.org/10.1007/s12518-017-0191-1"
-               target="_blank" rel="noopener noreferrer">
-              DOI ↗
-            </a>
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="assets/publications/rai-2017-narmada-morphometry.pdf"
+               target="_blank" rel="noopener noreferrer">VIEW ARTICLE ↗</a>
           </div>
 
         </div>
@@ -857,20 +876,16 @@
   <section class="pub-category">
 
     <div class="pub-category-heading">
-
       <p class="pub-kicker">IN PROGRESS</p>
-
       <h2>Under review</h2>
-
     </div>
-
 
     <div class="pub-list">
 
 
-      <!-- UNDER REVIEW 01 -->
+      <!-- UNDER REVIEW 1 -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-review">
 
         <div class="pub-card-content">
 
@@ -896,9 +911,9 @@
 
 
 
-      <!-- UNDER REVIEW 02 -->
+      <!-- UNDER REVIEW 2 -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-review">
 
         <div class="pub-card-content">
 
@@ -924,9 +939,9 @@
 
 
 
-      <!-- UNDER REVIEW 03 -->
+      <!-- UNDER REVIEW 3 -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-review">
 
         <div class="pub-card-content">
 
@@ -965,20 +980,16 @@
   <section class="pub-category">
 
     <div class="pub-category-heading">
-
       <p class="pub-kicker">CONFERENCE CONTRIBUTIONS</p>
-
       <h2>Conference proceedings</h2>
-
     </div>
-
 
     <div class="pub-list">
 
 
       <!-- AGU 2024 -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-conference">
 
         <div class="pub-card-content">
 
@@ -990,7 +1001,8 @@
           </h3>
 
           <p class="pub-authors">
-            <strong>Chaubey, P. K.,</strong> Saini, R., &amp; Attada, R. (2024).
+            <strong>Chaubey, P. K.,</strong>
+            Saini, R., &amp; Attada, R. (2024).
           </p>
 
           <p class="pub-journal">
@@ -998,11 +1010,8 @@
           </p>
 
           <div class="pub-links">
-            <a
-              href="https://ui.adsabs.harvard.edu/abs/2024AGUFM.A07...16C"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://ui.adsabs.harvard.edu/abs/2024AGUFM.A07...16C"
+               target="_blank" rel="noopener noreferrer">
               VIEW ABSTRACT ↗
             </a>
           </div>
@@ -1015,7 +1024,7 @@
 
       <!-- EGU 2024 -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-conference">
 
         <div class="pub-card-content">
 
@@ -1027,7 +1036,8 @@
           </h3>
 
           <p class="pub-authors">
-            <strong>Chaubey, P. K.,</strong> &amp; Attada, R. (2024).
+            <strong>Chaubey, P. K.,</strong>
+            &amp; Attada, R. (2024).
           </p>
 
           <p class="pub-journal">
@@ -1036,13 +1046,10 @@
           </p>
 
           <div class="pub-links">
-            <a
-              href="https://doi.org/10.5194/egusphere-egu24-14265"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              DOI ↗
-            </a>
+            <a href="https://doi.org/10.5194/egusphere-egu24-14265"
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="https://doi.org/10.5194/egusphere-egu24-14265"
+               target="_blank" rel="noopener noreferrer">VIEW ABSTRACT ↗</a>
           </div>
 
         </div>
@@ -1053,7 +1060,7 @@
 
       <!-- AGU 2022: FLOODING -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-conference">
 
         <div class="pub-card-content">
 
@@ -1065,7 +1072,8 @@
           </h3>
 
           <p class="pub-authors">
-            <strong>Chaubey, P. K.,</strong> &amp; Mall, R. K. (2022).
+            <strong>Chaubey, P. K.,</strong>
+            &amp; Mall, R. K. (2022).
           </p>
 
           <p class="pub-journal">
@@ -1073,11 +1081,8 @@
           </p>
 
           <div class="pub-links">
-            <a
-              href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A35P1680C"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A35P1680C"
+               target="_blank" rel="noopener noreferrer">
               VIEW ABSTRACT ↗
             </a>
           </div>
@@ -1088,9 +1093,9 @@
 
 
 
-      <!-- AGU 2022: RAINFALL SHIFTS -->
+      <!-- AGU 2022: RAINFALL EXTREMES -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-conference">
 
         <div class="pub-card-content">
 
@@ -1102,7 +1107,8 @@
           </h3>
 
           <p class="pub-authors">
-            <strong>Chaubey, P. K.,</strong> &amp; Mall, R. K. (2022).
+            <strong>Chaubey, P. K.,</strong>
+            &amp; Mall, R. K. (2022).
           </p>
 
           <p class="pub-journal">
@@ -1111,11 +1117,8 @@
           </p>
 
           <div class="pub-links">
-            <a
-              href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A46E..10C"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A46E..10C"
+               target="_blank" rel="noopener noreferrer">
               VIEW ABSTRACT ↗
             </a>
           </div>
@@ -1128,7 +1131,7 @@
 
       <!-- EGU 2022 -->
 
-      <article class="pub-card pub-card-text-only">
+      <article class="pub-card pub-card-text-only pub-conference">
 
         <div class="pub-card-content">
 
@@ -1140,7 +1143,8 @@
           </h3>
 
           <p class="pub-authors">
-            <strong>Chaubey, P. K.,</strong> &amp; Mall, R. K. (2022).
+            <strong>Chaubey, P. K.,</strong>
+            &amp; Mall, R. K. (2022).
           </p>
 
           <p class="pub-journal">
@@ -1149,12 +1153,11 @@
           </p>
 
           <div class="pub-links">
-            <a
-              href="https://doi.org/10.5194/egusphere-egu22-188"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              DOI ↗
+            <a href="https://doi.org/10.5194/egusphere-egu22-188"
+               target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            <a href="https://doi.org/10.5194/egusphere-egu22-188"
+               target="_blank" rel="noopener noreferrer">
+              VIEW ABSTRACT ↗
             </a>
           </div>
 
@@ -1169,20 +1172,17 @@
 
 
 
-  <!-- =====================================================
-       END NOTE
-       ===================================================== -->
+  <!-- END NOTE -->
 
   <section class="pub-note">
 
     <h2>Complete publication record</h2>
 
     <p>
-      This page includes journal articles, co-authored papers,
-      manuscripts under review and conference proceedings.
-      The impact-factor values are reproduced from the information
-      provided and should be checked against the relevant
-      reporting year before formal use.
+      Published articles include DOI links and a VIEW ARTICLE
+      button for a PDF you provide. Conference records link to
+      their public abstracts. Manuscripts under review are listed
+      separately without public manuscript links.
     </p>
 
   </section>
@@ -1192,15 +1192,11 @@
 
 
 
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
+<!-- FOOTER -->
 
 <footer class="site-footer">
 
-  <span>
-    © 2026 Dr. Pawan Kumar Chaubey
-  </span>
+  <span>© 2026 Dr. Pawan Kumar Chaubey</span>
 
   <span>
     Climate Science · Earth Observation · Climate Risk
